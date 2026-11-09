@@ -141,9 +141,9 @@ It has all the code for the drivetrain and other sensors.
     return RomiDrivetrain.getInstance().getButtonBPressed();
   }
 
-  private boolean getRomiCPressed() {
-    return RomiDrivetrain.getInstance().getButtonCPressed();
-  }
+  // private boolean getRomiCPressed() {
+  //   return RomiDrivetrain.getInstance().getButtonCPressed();
+  // }
 
   // private void setGreenLed(boolean value) {
   //   RomiDrivetrain.getInstance().setGreenLed(value);
@@ -157,29 +157,29 @@ It has all the code for the drivetrain and other sensors.
   //   setGreenLed(false);
   // }
 
-  // private void setRedLed(boolean value) {
-  //   RomiDrivetrain.getInstance().setRedLed(value);
-  // }
+  private void setRedLed(boolean value) {
+    RomiDrivetrain.getInstance().setRedLed(value);
+  }
 
-  // private void turnRedLedOn() {
-  //   setRedLed(true);
-  // }
+  private void turnRedLedOn() {
+    setRedLed(true);
+  }
 
-  // private void turnRedLedOff() {
-  //   setRedLed(false);
-  // }
+  private void turnRedLedOff() {
+    setRedLed(false);
+  }
 
-  // private void setYellowLed(boolean value) {
-  //   RomiDrivetrain.getInstance().setYellowLed(value);
-  // }
+  private void setYellowLed(boolean value) {
+    RomiDrivetrain.getInstance().setYellowLed(value);
+  }
 
-  // private void turnYellowLedOn() {
-  //   setYellowLed(true);
-  // }
+  private void turnYellowLedOn() {
+    setYellowLed(true);
+  }
 
-  // private void turnYellowLedOff() {
-  //   setYellowLed(false);
-  // }
+  private void turnYellowLedOff() {
+    setYellowLed(false);
+  }
 
 
   // ================ CONTROLLER FUNCTIONS ========================

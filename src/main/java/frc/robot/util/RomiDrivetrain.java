@@ -5,7 +5,6 @@
 package frc.robot.util;
 
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj.romi.RomiGyro;
@@ -31,8 +30,7 @@ public class RomiDrivetrain {
       new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
 
   private final RomiGyro m_gyro = new RomiGyro();
-  private final OnBoardIO m_buttons = new OnBoardIO(ChannelMode.INPUT, ChannelMode.INPUT);
-  // private final OnBoardIO m_leds = new OnBoardIO(ChannelMode.OUTPUT, ChannelMode.OUTPUT);
+  private final OnBoardIO m_onboard = new OnBoardIO(ChannelMode.INPUT, ChannelMode.OUTPUT);
 
 
   // NOTE: Singletons are NOT recommended; this is only done to reduce
@@ -78,19 +76,19 @@ public class RomiDrivetrain {
   }
 
   public boolean getButtonAPressed() {
-    return m_buttons.getButtonAPressed();
+    return m_onboard.getButtonAPressed();
   }
 
   public boolean getButtonBPressed() {
-    return m_buttons.getButtonBPressed();
+    return m_onboard.getButtonBPressed();
   }
 
-  public boolean getButtonCPressed() {
-    return m_buttons.getButtonCPressed();
-  }
+  // public boolean getButtonCPressed() {
+  //   return m_buttons.getButtonCPressed();
+  // }
 
   // public void setGreenLed(boolean value) {
-  //   m_leds.setGreenLed(value);
+  //   m_onboard.setGreenLed(value);
   // }
 
   // public void turnGreenLedOn() {
@@ -101,28 +99,28 @@ public class RomiDrivetrain {
   //   setGreenLed(false);
   // }
 
-  // public void setRedLed(boolean value) {
-  //   m_leds.setRedLed(value);
-  // }
+  public void setRedLed(boolean value) {
+    m_onboard.setRedLed(value);
+  }
 
-  // public void turnRedLedOn() {
-  //   setRedLed(true);
-  // }
+  public void turnRedLedOn() {
+    setRedLed(true);
+  }
 
-  // public void turnRedLedOff() {
-  //   setRedLed(false);
-  // }
+  public void turnRedLedOff() {
+    setRedLed(false);
+  }
 
-  // public void setYellowLed(boolean value) {
-  //   m_leds.setYellowLed(value);
-  // }
+  public void setYellowLed(boolean value) {
+    m_onboard.setYellowLed(value);
+  }
 
-  // public void turnYellowLedOn() {
-  //   setYellowLed(true);
-  // }
+  public void turnYellowLedOn() {
+    setYellowLed(true);
+  }
 
-  // public void turnYellowLedOff() {
-  //   setYellowLed(false);
-  // }
+  public void turnYellowLedOff() {
+    setYellowLed(false);
+  }
  
 }
