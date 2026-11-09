@@ -18,15 +18,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    if (getButtonBPressed()) {
-      driveReverse();
-    }
 
-    if (getZButton()) {
-      driveForward();
-    } else {
-      stop();
-    }
   }
 
   
@@ -141,15 +133,15 @@ It has all the code for the drivetrain and other sensors.
     RomiDrivetrain.getInstance().resetGyro();
   }
 
-  private boolean getButtonAPressed() {
+  private boolean getRomiAPressed() {
     return RomiDrivetrain.getInstance().getButtonAPressed();
   }
 
-  private boolean getButtonBPressed() {
+  private boolean getRomiBPressed() {
     return RomiDrivetrain.getInstance().getButtonBPressed();
   }
 
-  private boolean getButtonCPressed() {
+  private boolean getRomiCPressed() {
     return RomiDrivetrain.getInstance().getButtonCPressed();
   }
 
@@ -192,7 +184,7 @@ It has all the code for the drivetrain and other sensors.
 
   // ================ CONTROLLER FUNCTIONS ========================
   private boolean getZButtonPressed() {
-      return KeyboardController.getInstance().getRawButtonPressed(1);
+    return KeyboardController.getInstance().getRawButtonPressed(1);
   }
   
   private boolean getZButton() {
@@ -200,43 +192,43 @@ It has all the code for the drivetrain and other sensors.
   }
 
   private boolean getZButtonReleased() {
-      return KeyboardController.getInstance().getRawButtonReleased(1);
+    return KeyboardController.getInstance().getRawButtonReleased(1);
   }
 
   private boolean getXButtonPressed() {
-      return KeyboardController.getInstance().getRawButtonPressed(2);
+    return KeyboardController.getInstance().getRawButtonPressed(2);
   }
   
   private boolean getXButton() {
-      return KeyboardController.getInstance().getRawButton(2);
+    return KeyboardController.getInstance().getRawButton(2);
   }
 
   private boolean getXButtonReleased() {
-      return KeyboardController.getInstance().getRawButtonReleased(2);
+    return KeyboardController.getInstance().getRawButtonReleased(2);
   }
 
   private boolean getCButtonPressed() {
-      return KeyboardController.getInstance().getRawButtonPressed(3);
+    return KeyboardController.getInstance().getRawButtonPressed(3);
   }
   
   private boolean getCButton() {
-      return KeyboardController.getInstance().getRawButton(3);
+    return KeyboardController.getInstance().getRawButton(3);
   }
 
   private boolean getCButtonReleased() {
-      return KeyboardController.getInstance().getRawButtonReleased(3);
+    return KeyboardController.getInstance().getRawButtonReleased(3);
   }
 
   private boolean getVButtonPressed() {
-      return KeyboardController.getInstance().getRawButtonPressed(4);
+    return KeyboardController.getInstance().getRawButtonPressed(4);
   }
   
   private boolean getVButton() {
-      return KeyboardController.getInstance().getRawButton(4);
+    return KeyboardController.getInstance().getRawButton(4);
   }
 
   private boolean getVButtonReleased() {
-      return KeyboardController.getInstance().getRawButtonReleased(4);
+    return KeyboardController.getInstance().getRawButtonReleased(4);
   }
 
   private int getPOV() {
@@ -244,14 +236,14 @@ It has all the code for the drivetrain and other sensors.
   }
 
   private double getADAxis() {
-      return KeyboardController.getInstance().getRawAxis(0);
+    return KeyboardController.getInstance().getRawAxis(0);
   }
 
   private double getWSAxis() {
-      return KeyboardController.getInstance().getRawAxis(1);
+    return KeyboardController.getInstance().getRawAxis(1);
   }
 
   private double getERAxis() {
-      return KeyboardController.getInstance().getRawAxis(2);
+    return KeyboardController.getInstance().getRawAxis(2);
   }
 }
